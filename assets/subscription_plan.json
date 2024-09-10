@@ -1,0 +1,26 @@
+[
+  {
+    "planId": "Basic",
+    "description": "You can borrow a maximum of 1 book at a time, renewable at will until the end of your subscription.",
+    "price": 2000.0,
+    "maxBooks": 1,
+    "allowedBooks": 1,
+    "currency": "XAF"
+  },
+  {
+    "planId": "Standard",
+    "description": "You can borrow a maximum of 2 books at a time, renewable at will until the end of your subscription.",
+    "price": 3000.0,
+    "maxBooks": 2,
+    "allowedBooks": 2,
+    "currency": "XAF"
+  },
+  {
+    "planId": "Premium",
+    "description": "You can borrow a maximum of 4 books at a time, renewable at will until the end of your subscription.",
+    "price": 5000.0,
+    "maxBooks": 4,
+    "allowedBooks": 4,
+    "currency": "XAF"
+  }
+]
