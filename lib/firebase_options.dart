@@ -48,8 +48,8 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB7wZb2tO1-Fs6GbDADUSTs2Qs3w08Hovw',
-    appId: '1:406099696497:web:87e25e51afe982cd3574d0',
+    apiKey: '',
+    appId: '',
     messagingSenderId: '406099696497',
     projectId: 'flutterfire-e2e-tests',
     authDomain: 'flutterfire-e2e-tests.firebaseapp.com',
@@ -70,8 +70,8 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDooSUGSf63Ghq02_iIhtnmwMDs4HlWS6c',
-    appId: '1:406099696497:ios:1b423b89c63b82053574d0',
+    apiKey: 'df',
+    appId: 'fd',
     messagingSenderId: '406099696497',
     projectId: 'flutterfire-e2e-tests',
     databaseURL:
@@ -85,8 +85,8 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDooSUGSf63Ghq02_iIhtnmwMDs4HlWS6c',
-    appId: '1:406099696497:ios:1b423b89c63b82053574d0',
+    apiKey: 'dds',
+    appId: '1:dsdf:ios:df',
     messagingSenderId: '406099696497',
     projectId: 'flutterfire-e2e-tests',
     databaseURL:
