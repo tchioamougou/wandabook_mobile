@@ -9,7 +9,7 @@ import '../../layouts/main/main_layout.dart';
 import '../../../controllers/checkout_controller.dart';
 
 class CheckoutPage extends GetView<CheckoutController> {
-      const CheckoutPage ({Key? key}) : super(key: key);
+      const CheckoutPage ({Key? key, }) : super(key: key);
 
 
   @override
@@ -52,7 +52,7 @@ class CheckoutPage extends GetView<CheckoutController> {
                             child: Column(
                               children: <Widget>[
                                 Text(
-                                  "\$900",
+                                  "${controller.subscriptionController.selectedPlan.value.currency} ${controller.subscriptionController.selectedPlan.value.price}",
                                   style: boldText.copyWith(
                                     color: Colors.white,
                                   ),
@@ -80,9 +80,11 @@ class CheckoutPage extends GetView<CheckoutController> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children:  <Widget>[
-                                      QuantitySelector(onQuantityChanged: (val){}),
+                                      QuantitySelector(onQuantityChanged: (int val){
+                                        controller.totalAmount.value = val.toDouble()*controller.subscriptionController.selectedPlan.value.price;
+                                      }),
                                       Text(
-                                        "\$900",
+                                        "${controller.totalAmount}",
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 15.sp
@@ -90,21 +92,21 @@ class CheckoutPage extends GetView<CheckoutController> {
                                       ),
                                     ],
                                   ),
+                                  const SizedBox(height: 7.0),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
                                     children:  <Widget>[
                                       Text(
-                                        "Number of month",
-                                        style: TextStyle(
+                                        "Number of month".tr,
+                                        style: const TextStyle(
                                           color: Colors.grey,
                                           fontSize: 12.0,
                                         ),
                                       ),
                                       SizedBox(height: 10.h),
                                       Text(
-                                        "Total",
-                                        style: TextStyle(
+                                        "Total".tr,
+                                        style: const TextStyle(
                                           color: Colors.grey,
                                           fontSize: 12.0,
                                         ),
@@ -125,12 +127,13 @@ class CheckoutPage extends GetView<CheckoutController> {
                           controller.paymentMethod.value="CreditCard";
                         },
                         leading: Icon(
-                          FontAwesomeIcons.mobile,
+                          FontAwesomeIcons.creditCard,
+                          size: 25.sp,
                           color:controller.paymentMethod.value=="CreditCard"? Colors.orange:Colors.indigo,
                         ),
-                        title: Text("Credit Card"),
-                        subtitle: Text('You will be redirected to a secure CinetPay page to make a payment.'),
-                        trailing:controller.paymentMethod.value=="CreditCard"?Icon(Icons.check_circle): Icon(Icons.arrow_forward_ios),
+                        title: Text("Credit Card",style: TextStyle(fontWeight: FontWeight.bold)),
+                        subtitle: Text('You will be redirected to a secure Credit Card page to make a payment.'),
+                        trailing:controller.paymentMethod.value=="CreditCard"?Icon(Icons.check_circle,color: Colors.orange): null,
                       ),
                     ),
                     RoundedContainer(
@@ -142,12 +145,13 @@ class CheckoutPage extends GetView<CheckoutController> {
                         },
                         leading: Icon(
                           FontAwesomeIcons.mobile,
+                          size: 25.sp,
                           color:controller.paymentMethod.value=="mobileMoney"? Colors.orange:Colors.indigo,
                         ),
-                        title: const Text("Mobile Money"),
+                        title: const Text("Mobile Money",style: TextStyle(fontWeight: FontWeight.bold),),
                         subtitle: Text('You will be redirected to a secure CinetPay page to make a payment.'),
 
-                        trailing:controller.paymentMethod.value=="mobileMoney"?Icon(Icons.check_circle): Icon(Icons.arrow_forward_ios),
+                        trailing:controller.paymentMethod.value=="mobileMoney"?Icon(Icons.check_circle,color: Colors.orange,): null,
                       ),
                     ),
                   ],

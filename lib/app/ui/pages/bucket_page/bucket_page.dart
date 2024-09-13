@@ -17,7 +17,7 @@ class BucketPage extends GetView<BucketController> {
           Scaffold(
             backgroundColor: Theme.of(context).primaryColor,
             appBar: AppBar(
-              title: Text('My cart'),
+              title: const Text('My cart'),
               centerTitle: true,
               elevation: 2,
               shadowColor: Colors.orange,

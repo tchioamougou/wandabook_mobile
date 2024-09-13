@@ -2,6 +2,7 @@
 import 'package:cinetpay/cinetpay.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wandabook/app/controllers/subscription_controller.dart';
 class CheckoutController extends GetxController {
   RxString paymentMethod = ''.obs;
   bool isLoading = false;
@@ -9,10 +10,17 @@ class CheckoutController extends GetxController {
   bool initialisation = true;
   final formKey = GlobalKey<FormState>();
   final controllerCard = TextEditingController();
+  SubscriptionController subscriptionController = Get.find<SubscriptionController>();
   String clientSecret = '';
+  RxDouble totalAmount = 0.0.obs;
+  @override
+  void onInit() {
+    // TODO: implement onInit,
+    totalAmount.value = subscriptionController.selectedPlan.value.price;
+    super.onInit();
+  }
   Future<void> handleStripePayment() async {
     bool isError = false;
-
   }
   Future<void> handleCinetPayPayment() async {
         await Get.to(() => CinetPayCheckout(
@@ -52,5 +60,4 @@ class CheckoutController extends GetxController {
       await handleCinetPayPayment();
     }
   }
-
 }

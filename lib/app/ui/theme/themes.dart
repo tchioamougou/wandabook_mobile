@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class Themes {
@@ -11,7 +12,7 @@ class Themes {
         buttonColor: Colors.orange,
       ));
   final darkTheme = ThemeData.dark().copyWith(
-    primaryColor: Color.fromRGBO(46, 56, 71, 1),
+    primaryColor: Colors.grey[900],
     cardColor: Colors.grey[900],
     scaffoldBackgroundColor: Colors.grey[800],
     shadowColor: Colors.grey,

@@ -1,3 +1,7 @@
 
 import 'package:get/get.dart';
-class ProfileController extends GetxController {}
+import 'package:wandabook/global.dart';
+class ProfileController extends GetxController {
+  bool isLoggedIn = Global.storageService.getIsLoggedIn();
+
+}

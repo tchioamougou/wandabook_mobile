@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:wandabook/app/routes/app_routes.dart';
 import 'package:wandabook/app/ui/layouts/main/widgets/custom_buttom.dart';
 import '../../layouts/main/main_layout.dart';
 
@@ -122,7 +121,7 @@ class SubscriptionPage extends GetView<SubscriptionController> {
                         titleText: "Continue".tr,
                         titleColor: Colors.white,
                         onPressed: () {
-                          Get.toNamed(AppRoutes.CHECKOUT);
+                          controller.next();
                         },
                       ),
                     ),

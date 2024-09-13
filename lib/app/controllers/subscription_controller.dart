@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:wandabook/app/data/models/subscription_plan_model.dart';
+import 'package:wandabook/app/routes/app_routes.dart';
 class SubscriptionController extends GetxController {
   RxList<SubscriptionPlanModel> subscriptionPlans = <SubscriptionPlanModel>[]
       .obs;
@@ -28,5 +29,10 @@ class SubscriptionController extends GetxController {
 
   void selectPlan(SubscriptionPlanModel act) {
     selectedPlan.value = act;
+  }
+  void next(){
+    if(selectedPlan.value.currency.isNotEmpty && !selectedPlan.value.price.isEqual(0)){
+      Get.toNamed(AppRoutes.CHECKOUT);
+    }
   }
 }

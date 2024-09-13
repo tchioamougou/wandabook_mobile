@@ -50,17 +50,17 @@ class OnboardingPage extends GetView<OnboardingController> {
                                   Get.offAllNamed(AppRoutes. HOME);
                                 }else{
                                   controller.pageController.nextPage(
-                                      duration: Duration(microseconds: 300),
+                                      duration: const Duration(microseconds: 300),
                                       curve: Curves.ease);
                                 }
 
                               },
                               style:
-                              ElevatedButton.styleFrom(shape: CircleBorder(), backgroundColor: Colors.blue),
+                              ElevatedButton.styleFrom(shape: CircleBorder(), backgroundColor: Colors.orange),
                               child: Icon(
                                 Icons.arrow_forward,
                                 color: Colors.white,
-                                size: 20,
+                                size: 19.sp,
                               ),
                             )
                           ],

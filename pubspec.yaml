@@ -1,5 +1,5 @@
 name: wandabook
-description: wandabook.
+description: A new Flutter project.
 
 version: 1.0.0+1
 
@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  shared_preferences:
   cupertino_icons:
   get: ^4.6.6
   get_storage:
@@ -29,6 +29,10 @@ dependencies:
   flutter_spinkit: ^5.2.1
   fluttertoast: ^8.2.8
 
+  firebase_auth:
+  firebase_messaging:
+  firebase_core:
+  cloud_firestore:
 
 
 dev_dependencies:
@@ -64,4 +68,5 @@ flutter:
     - assets/image/
     - assets/animation/
     - assets/subscription_plan.json
+    - assets/image/logo.png
   uses-material-design: true

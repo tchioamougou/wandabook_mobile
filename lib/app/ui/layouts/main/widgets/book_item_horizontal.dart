@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wandabook/app/controllers/bucket_controller.dart';
 import 'package:wandabook/app/data/models/book_new_model.dart';
-import 'package:wandabook/app/routes/app_routes.dart';
 import 'package:wandabook/app/ui/layouts/main/main_layout.dart';
 
 class BookItemHorizontal extends StatelessWidget {
   final Book book;
 
-  const BookItemHorizontal({Key? key, required this.book}) : super(key: key);
+  const BookItemHorizontal({Key? key,  required this.book}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +34,17 @@ class BookItemHorizontal extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    SizedBox(width: 200.w,child: Text(
                       book.volumeInfo!.title,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
+                      maxLines: 2,
                       style: TextStyle(
                         fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
+
                       ),
-                    ),
+                    ),),
                     const SizedBox(height: 5),
                     Text(
                       book.volumeInfo!.authors.join(', '),
@@ -66,7 +69,7 @@ class BookItemHorizontal extends StatelessWidget {
                     bucketController.removeBookFromBucket(book);
                   },
                   color: Colors.orange,
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.delete_forever,
                     size: 20,
                   ))),

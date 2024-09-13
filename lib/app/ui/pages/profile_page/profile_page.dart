@@ -89,56 +89,14 @@ class ProfilePage extends GetView<ProfileController> {
                         size: 25,
                       ),
                       onTap: () {
-                        Get.toNamed(AppRoutes.SUBSCRIPTION);
+                        if(controller.isLoggedIn){
+                          Get.toNamed(AppRoutes.SUBSCRIPTION);
+                        }else{
+                          Get.toNamed(AppRoutes.LOGIN);
+                        }
+
                       }),
-                  //Account info
-                  ListTile(
-                    title: Text('Security setting'.tr),
-                    enabled: false,
-                  ),
-                  ListTile(
-                    leading: Container(
-                      padding: const EdgeInsets.all(3),
-                      decoration: BoxDecoration(
-                          color: actionColor,
-                          borderRadius: const BorderRadius.all(Radius.circular(6))),
-                      child: Icon(
-                        Icons.account_circle_outlined,
-                        size: 25.sp,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ),
-                    title: Text('Change Pin'.tr),
-                    trailing: const Icon(
-                      Icons.navigate_next,
-                      size: 25,
-                    ),
-                    onTap: () {
-                      Get.toNamed(AppRoutes.PROFILE);
-                    },
-                  ),
-                  ListTile(
-                    leading: Container(
-                      padding: const EdgeInsets.all(3),
-                      decoration: BoxDecoration(
-                          color: actionColor,
-                          borderRadius: const BorderRadius.all(Radius.circular(6))),
-                      child: Icon(
-                        Icons.lock_person_outlined,
-                        size: 25.sp,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ),
-                    title: Text('Change Phone Number'.tr),
-                    trailing: const Icon(
-                      Icons.navigate_next,
-                      size: 25,
-                    ),
-                    onTap: () {
-                      // Handle advanced settings logic
-                      //AppSettings.openAppSettings(type: AppSettingsType.location);
-                    },
-                  ),
+
                   // Preferences section
                   ListTile(
                     title: Text('Preferences'.tr),
