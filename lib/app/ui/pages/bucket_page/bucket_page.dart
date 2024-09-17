@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wandabook/app/ui/layouts/main/widgets/book_item_horizontal.dart';
 import 'package:wandabook/app/ui/layouts/main/widgets/custom_buttom.dart';
+import 'package:wandabook/app/ui/utils/constants.dart';
 import '../../layouts/main/main_layout.dart';
 
 import '../../../controllers/bucket_controller.dart';
@@ -19,14 +20,13 @@ class BucketPage extends GetView<BucketController> {
             appBar: AppBar(
               title: const Text('My cart'),
               centerTitle: true,
-              elevation: 2,
-              shadowColor: Colors.orange,
+              elevation: 0,
             ),
             body: Stack(
               children: [
                 SingleChildScrollView(
                   child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 40.h),
+                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
                       child:Column(
                         children: [
                           Column(
@@ -38,9 +38,6 @@ class BucketPage extends GetView<BucketController> {
                           ),
                         ],
                       )
-
-
-
                   ),
                 ),
               ],
@@ -53,7 +50,7 @@ class BucketPage extends GetView<BucketController> {
             child:CustomButton(
               onPressed: () {},
               titleText: 'Borrowed Now',
-              buttonColor: Colors.orange,
+              buttonColor: Constants.defaultRed,
             ),
           ),
         ],

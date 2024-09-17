@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:wandabook/app/ui/layouts/main/widgets/custom_buttom.dart';
 import 'package:wandabook/app/ui/layouts/main/widgets/quantity_selector.dart';
 import 'package:wandabook/app/ui/layouts/main/widgets/rounded_container.dart';
+import 'package:wandabook/app/ui/utils/constants.dart';
 import '../../layouts/main/main_layout.dart';
 
 import '../../../controllers/checkout_controller.dart';
@@ -44,7 +45,7 @@ class CheckoutPage extends GetView<CheckoutController> {
                       children: <Widget>[
                         Expanded(
                           child: RoundedContainer(
-                            color: Colors.orange,
+                            color: Constants.defaultRed,
                             margin: const EdgeInsets.symmetric(
                               vertical: 8.0,
                               horizontal: 8.0,
@@ -129,11 +130,11 @@ class CheckoutPage extends GetView<CheckoutController> {
                         leading: Icon(
                           FontAwesomeIcons.creditCard,
                           size: 25.sp,
-                          color:controller.paymentMethod.value=="CreditCard"? Colors.orange:Colors.indigo,
+                          color:controller.paymentMethod.value=="CreditCard"? Constants.defaultRed:Colors.indigo,
                         ),
                         title: Text("Credit Card",style: TextStyle(fontWeight: FontWeight.bold)),
                         subtitle: Text('You will be redirected to a secure Credit Card page to make a payment.'),
-                        trailing:controller.paymentMethod.value=="CreditCard"?Icon(Icons.check_circle,color: Colors.orange): null,
+                        trailing:controller.paymentMethod.value=="CreditCard"?Icon(Icons.check_circle,color: Constants.defaultRed): null,
                       ),
                     ),
                     RoundedContainer(
@@ -146,12 +147,12 @@ class CheckoutPage extends GetView<CheckoutController> {
                         leading: Icon(
                           FontAwesomeIcons.mobile,
                           size: 25.sp,
-                          color:controller.paymentMethod.value=="mobileMoney"? Colors.orange:Colors.indigo,
+                          color:controller.paymentMethod.value=="mobileMoney"? Constants.defaultRed:Colors.indigo,
                         ),
                         title: const Text("Mobile Money",style: TextStyle(fontWeight: FontWeight.bold),),
                         subtitle: Text('You will be redirected to a secure CinetPay page to make a payment.'),
 
-                        trailing:controller.paymentMethod.value=="mobileMoney"?Icon(Icons.check_circle,color: Colors.orange,): null,
+                        trailing:controller.paymentMethod.value=="mobileMoney"?Icon(Icons.check_circle,color: Constants.defaultRed,): null,
                       ),
                     ),
                   ],
@@ -168,7 +169,7 @@ class CheckoutPage extends GetView<CheckoutController> {
                       SizedBox(
                         width: MediaQuery.sizeOf(context).width,
                         child: CustomButton(
-                          buttonColor: Colors.orange,
+                          buttonColor: Constants.defaultRed,
                           titleText: "Pay Now".tr,
                           titleColor: Colors.white,
                           onPressed: () {

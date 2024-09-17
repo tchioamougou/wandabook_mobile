@@ -5,6 +5,7 @@ import 'package:wandabook/app/controllers/bucket_controller.dart';
 import 'package:wandabook/app/data/models/book_new_model.dart';
 import 'package:wandabook/app/routes/app_routes.dart';
 import 'package:wandabook/app/ui/layouts/main/main_layout.dart';
+import 'package:wandabook/app/ui/utils/constants.dart';
 
 class BookItem extends StatefulWidget {
   final Book book;
@@ -38,7 +39,7 @@ class _BookItemState extends State<BookItem> {
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 10),
-            Container(
+            SizedBox(
               width: 150.w,
               child: Text(
                 widget.book.volumeInfo!.title,
@@ -52,7 +53,7 @@ class _BookItemState extends State<BookItem> {
               ),
             ),
             const SizedBox(height: 5),
-            Container(
+            SizedBox(
               width: 150.w,
               child: Text(
                 widget.book.volumeInfo!.authors.join(', '),
@@ -76,7 +77,7 @@ class _BookItemState extends State<BookItem> {
                     setState(() {
 
                     });
-                  }, icon: Icon(Icons.check_circle_outline,size: 20, color: Colors.green,),
+                  }, icon: const Icon(Icons.check_circle_outline,size: 20, color: Colors.green,),
                   padding: EdgeInsets.zero,
                 )
               else
@@ -85,7 +86,7 @@ class _BookItemState extends State<BookItem> {
                   setState(() {
 
                   });
-                }, icon: Icon(Icons.add_circle_outline,size: 20, color: Colors.orange,))
+                }, icon: Icon(Icons.add_circle_outline,size: 20, color: Constants.defaultRed,))
             ],
           ),
         ),

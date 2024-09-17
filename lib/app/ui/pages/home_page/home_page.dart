@@ -4,6 +4,7 @@ import 'package:wandabook/app/ui/pages/bucket_page/bucket_page.dart';
 import 'package:wandabook/app/ui/pages/init_page/init_page.dart';
 import 'package:wandabook/app/ui/pages/profile_page/profile_page.dart';
 import 'package:wandabook/app/ui/pages/search_page/search_page.dart';
+import 'package:wandabook/app/ui/utils/constants.dart';
 import '../../layouts/main/main_layout.dart';
 
 import '../../../controllers/home_controller.dart';
@@ -56,7 +57,7 @@ class HomePage extends GetView<HomeController> {
                 ),
               ],
               currentIndex: controller.selectedIndex.value,
-              selectedItemColor: Colors.orange,
+              selectedItemColor:Constants.defaultRed,
               unselectedItemColor: Colors.grey,
               onTap: controller.onItemTapped,
             )),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wandabook/app/ui/layouts/main/main_layout.dart';
+import 'package:wandabook/app/ui/utils/constants.dart';
 
 class CustomCategorySelect extends StatelessWidget {
   final Widget label;
@@ -56,19 +57,19 @@ class CustomCategorySelect extends StatelessWidget {
                       SizedBox(
                         height: 10.h,
                       ),
-                      Text("Categories".tr, style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text("Categories".tr, style: const TextStyle(fontWeight: FontWeight.bold),),
                       Column(
                         children: options.map((el) {
                           return ListTile(
                             title: Text(el??""), // Assuming options have a String representation
                             leading: (selectedCat != null &&
                                 selectedCat! == el)
-                                ? Icon(
+                                ?  Icon(
                               Icons.check_circle,
                               size: 30,
-                              color: Colors.orange,
+                              color: Constants.defaultRed,
                             )
-                                : Icon(Icons.credit_card_sharp),
+                                : const Icon(Icons.credit_card_sharp),
                             onTap: () {
                               onChanged(el);
                               Navigator.pop(context);

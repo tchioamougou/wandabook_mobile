@@ -3,6 +3,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:wandabook/app/ui/layouts/main/widgets/book_item.dart';
 import 'package:wandabook/app/ui/layouts/main/widgets/rounded_search_input.dart';
+import 'package:wandabook/app/ui/utils/constants.dart';
 import '../../layouts/main/main_layout.dart';
 
 import '../../../controllers/search_controller.dart';
@@ -34,7 +35,7 @@ class SearchPage extends GetView<SearchPageController> {
                         ),
 
                         CustomCategorySelect(
-                            label:Icon(Icons.filter_list),
+                            label:const Icon(Icons.filter_list),
                             options: controller.bookCategories,
                             selectedCat: controller.selectCat.value,
                             onChanged: (cate) {
@@ -45,16 +46,16 @@ class SearchPage extends GetView<SearchPageController> {
                     ),
                     SizedBox(height: 5.h,),
                     Card(
-                      color: Colors.orange,
+                      color: Constants.defaultRed,
                       child:Container(
                         padding: EdgeInsets.all(10.h),
-                        child:  Text(controller.selectCat.value, style: TextStyle(color: Colors.white),),
+                        child:  Text(controller.selectCat.value, style: const TextStyle(color: Colors.white),),
                       ),
                     ),
                     SizedBox(height: 10.h,),
                     if (controller.isLoading.value)
-                      const SpinKitCircle(
-                        color: Colors.orange,
+                       SpinKitCircle(
+                        color: Constants.defaultRed,
                         size: 40,
                       )
                     else

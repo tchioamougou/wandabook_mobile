@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wandabook/app/routes/app_routes.dart';
+import 'package:wandabook/app/ui/utils/constants.dart';
 import '../../layouts/main/main_layout.dart';
 
 import '../../../controllers/profile_controller.dart';
@@ -9,7 +10,7 @@ class ProfilePage extends GetView<ProfileController> {
       const ProfilePage ({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-     final actionColor = Colors.orange.withOpacity(0.5);
+     final actionColor = Constants.defaultRed.withOpacity(0.5);
     return  MainLayout(
         child: Scaffold(
           backgroundColor: Theme.of(context).primaryColor,
@@ -29,7 +30,7 @@ class ProfilePage extends GetView<ProfileController> {
                         },
                         child: SizedBox(
                           height: 120.h,
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             radius: 60,
                             backgroundImage: NetworkImage("imageUrl"),
                           ),
@@ -89,11 +90,7 @@ class ProfilePage extends GetView<ProfileController> {
                         size: 25,
                       ),
                       onTap: () {
-                        if(controller.isLoggedIn){
-                          Get.toNamed(AppRoutes.SUBSCRIPTION);
-                        }else{
-                          Get.toNamed(AppRoutes.LOGIN);
-                        }
+                        Get.toNamed(AppRoutes.SUBSCRIPTION);
 
                       }),
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:wandabook/app/ui/layouts/main/widgets/book_item.dart';
+import 'package:wandabook/app/ui/utils/constants.dart';
 import '../../layouts/main/main_layout.dart';
 
 import '../../../controllers/init_controller.dart';
@@ -72,7 +73,7 @@ class InitPage extends GetView<InitController> {
                   child: Row(
                     children: controller.bookCategories
                         .map((item) => TextButton(
-                      child: Text(item,style: TextStyle(color: controller.selectCat.value==item? Colors.orange:(Get.isDarkMode? Colors.white: Colors.deepPurple)),),
+                      child: Text(item,style: TextStyle(color: controller.selectCat.value==item? Constants.defaultRed:(Get.isDarkMode? Colors.white: Colors.deepPurple)),),
                       onPressed: (){
                         controller.selectCategory(item);
                       },
@@ -90,7 +91,7 @@ class InitPage extends GetView<InitController> {
                   ),
                 )
                 else SpinKitCircle(
-                  color: Colors.orange,
+                  color: Constants.defaultRed,
                   size: 40,
                 ),
                 Padding(padding: EdgeInsets.symmetric(horizontal: 20.h), child:Text('Book on sale',style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),) ,),

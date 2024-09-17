@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wandabook/app/ui/layouts/main/widgets/custom_buttom.dart';
+import 'package:wandabook/app/ui/utils/constants.dart';
 import '../../layouts/main/main_layout.dart';
 
 import '../../../controllers/subscription_controller.dart';
@@ -47,9 +48,9 @@ class SubscriptionPage extends GetView<SubscriptionController> {
                                           shape:
                                           (controller.selectedPlan.value.planId ==
                                               account.planId)
-                                              ? Border.all(color: Colors.orange,width: 2)
+                                              ? Border.all(color: Constants.defaultRed,width: 2)
                                               : null,
-                                          shadowColor: Colors.orange,
+                                          shadowColor: Constants.defaultRed,
                                           child: Padding(
                                             padding: EdgeInsets.symmetric(
                                                 horizontal: 20.w, vertical: 10.h),
@@ -72,9 +73,9 @@ class SubscriptionPage extends GetView<SubscriptionController> {
                                                     if (controller.selectedPlan.value
                                                         .planId ==
                                                         account.planId)
-                                                      const Icon(
+                                                       Icon(
                                                         Icons.check_circle,
-                                                        color: Colors.orange,
+                                                        color: Constants.defaultRed,
                                                       )
                                                   ],
                                                 ),
@@ -117,7 +118,7 @@ class SubscriptionPage extends GetView<SubscriptionController> {
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width,
                       child: CustomButton(
-                        buttonColor: Colors.orange,
+                        buttonColor: Constants.defaultRed,
                         titleText: "Continue".tr,
                         titleColor: Colors.white,
                         onPressed: () {
